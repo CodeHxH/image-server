@@ -1,0 +1,108 @@
+// Imagehover.css overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values without modifying source files.
+
+$image-bg: none;
+$figcaption-bg: rgb(20, 94, 231);
+$figcaption-padding: 30px;
+$text-color: #fff;
+$border-color: none;
+$border-margin: 0;
+$border-width: 0;
+$transition-duration: 0.35s;
+$shift-distance: 10px;
+
+/*!
+ * ImageHover.css - http://www.imagehover.io
+ * Version 2.0
+ * Author: Ciarán Walsh
+
+ * Made available under a MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+
+ */
+
+// Default variables
+//@import 'variables';
+
+@mixin fill($padding: 0) {
+	position: absolute;
+	top: $padding;
+	bottom: $padding;
+	left: $padding;
+	right: $padding;
+}
+
+[class^='imghvr-'],
+[class*=' imghvr-'] {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	max-width: 100%;
+	background-color: $image-bg;
+	color: #fff;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translateZ(0);
+
+	> img {
+		vertical-align: top;
+		max-width: 100%;
+	}
+
+	figcaption {
+		background-color: $figcaption-bg;
+		padding: $figcaption-padding;
+		@include fill;
+		color: $text-color;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: $text-color;
+		}
+	}
+
+	a {
+		@include fill;
+		z-index: 1;
+	}
+}
+
+[class^='imghvr-'],
+[class*=' imghvr-'],
+[class^='imghvr-']:before,
+[class^='imghvr-']:after,
+[class*=' imghvr-']:before,
+[class*=' imghvr-']:after,
+[class^='imghvr-'] *,
+[class*=' imghvr-'] *,
+[class^='imghvr-'] *:before,
+[class^='imghvr-'] *:after,
+[class*=' imghvr-'] *:before,
+[class*=' imghvr-'] *:after {
+	box-sizing: border-box;
+	transition: all 0.35s ease;
+}
+
+@import './effects/imghvr-fade';
+@import './effects/imghvr-push';
+@import './effects/imghvr-slide';
+@import './effects/imghvr-reveal';
+@import './effects/imghvr-hinge';
+@import './effects/imghvr-flip';
+@import './effects/imghvr-shutter-out';
+@import './effects/imghvr-shutter-in';
+@import './effects/imghvr-switch';
+@import './effects/imghvr-pivot-in';
+@import './effects/imghvr-pivot-out';
+@import './effects/imghvr-fold';
+@import './effects/imghvr-zoom-in';
+@import './effects/imghvr-zoom-out';
+@import './effects/imghvr-blur';
+@import './effects/imghvr-fall-away';
